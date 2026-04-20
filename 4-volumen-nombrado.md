@@ -43,6 +43,8 @@ docker run -d --name <nombre contenedor> --mount type=volume,src=<nombre >,dst=<
 
 ### Crear la red net-drupal de tipo bridge
 # COMPLETAR CON EL COMANDO
+docker network create net-drupal
+<img width="1276" height="558" alt="image" src="https://github.com/user-attachments/assets/55a8dc61-a275-4226-8d02-02f79e1dae1f" />
 
 ### Crear un servidor postgres vinculado a la red net-drupal, completar la ruta del contenedor
 ```
@@ -54,8 +56,10 @@ _No es necesario exponer el puerto, debido a que nos vamos a conectar desde la m
 ```
 docker run -d --name client-postgres --publish published=9500,target=80 -e PGADMIN_DEFAULT_PASSWORD=54321 -e PGADMIN_DEFAULT_EMAIL=<correo> --network net-drupal dpage/pgadmin4
 ```
+<img width="2314" height="347" alt="image" src="https://github.com/user-attachments/assets/1950172f-3acc-4d06-8026-9b6b9d882e8d" />
 
 ### Usar el cliente postgres para conectarse al servidor postgres, para la conexión usar el nombre del servidor en lugar de la dirección IP.
+
 
 ### Crear los volúmenes necesarios para drupal, esto se puede encontrar en la documentación
 ### COMPLETAR CON LOS COMANDOS
